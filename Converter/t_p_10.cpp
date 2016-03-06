@@ -55,5 +55,6 @@ int Tp_10::SetP( const int p )
 
 shared_ptr<Tp_10>&& Tp_10::Create( const int p )
 {
-    return make_shared<Tp_10>( p );
+    auto ptr = new Tp_10( p );
+    return shared_ptr<Tp_10>( ptr );
 }

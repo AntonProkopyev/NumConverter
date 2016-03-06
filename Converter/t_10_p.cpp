@@ -6,7 +6,7 @@ T10_p::T10_p( const int p, const int a )
 
 char T10_p::PIntToChar( const int d ) const
 {
-    return ( d > 9 ? ( d < 16 ? 'A' + d - 10 : -1 ) : ( d > 0 ? '0' + d : -1 ) );
+    return ( d > 9 ? ( d < 16 ? 'A' + d - 10 : -1 ) : ( d >=  0 ? '0' + d : -1 ) );
 }
 
 string T10_p::Int10ToP( int64_t r ) const
@@ -30,7 +30,7 @@ string T10_p::Frac10ToP( double f ) const
 string T10_p::DoTransfer( const double & number ) const
 {
     auto sign = number < 0;
-    return ( sign ? "-" : "" ) + Int10ToP( int64_t( ( sign ? -number : number ) ) ) + '.' + Int10ToP( ( sign ? -number : number ) - int64_t( ( sign ? -number : number ) ) );
+    return ( sign ? "-" : "" ) + Int10ToP( int64_t( ( sign ? -number : number ) ) ) + '.' + Frac10ToP( ( sign ? -number : number ) - int64_t( ( sign ? -number : number ) ) );
 }
 
 int T10_p::GetP( void ) const
@@ -49,5 +49,6 @@ int T10_p::SetP( const int p )
 
 shared_ptr<T10_p>&& T10_p::Create( const int p, const int a )
 {
-    return make_shared<T10_p>( p, a );
+    auto ptr = new T10_p( p, a );
+    return shared_ptr<T10_p>( ptr );
 }

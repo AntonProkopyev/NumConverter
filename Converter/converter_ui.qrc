@@ -1,4 +1,5 @@
 <RCC>
-    <qresource prefix="ConverterUI">
+    <qresource prefix="/ConverterUI">
+        <file>lol.jpg</file>
     </qresource>
 </RCC>
