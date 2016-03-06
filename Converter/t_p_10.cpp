@@ -24,7 +24,7 @@ double Tp_10::PIntTo10( const string & s ) const
 double Tp_10::PFracTo10( const string & f ) const
 {
     double result = 0.0;
-    double denom = 1;
+    double denom = 1.0;
     for (auto c : f) {
         result += ( denom /= Fp ) * PCharToInt( c );
     }
@@ -50,7 +50,6 @@ int Tp_10::SetP( const int p )
         Fp = p;
         return 0;
     }
-
     return -1;
 }
 

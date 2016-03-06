@@ -7,7 +7,6 @@ using namespace std;
 
 class Tp_10
 {
-
 private:
 
     int     Fp;
@@ -27,5 +26,5 @@ public:
     int     GetP( void ) const;
     int     SetP( const int p );
 
-    static shared_ptr<Tp_10>&&  Create( const int p );
+    static  shared_ptr<Tp_10>&& Create( const int p );
 };

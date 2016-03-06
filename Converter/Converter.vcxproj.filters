@@ -56,6 +56,9 @@
     <ClCompile Include="t_p_10.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="t_10_p.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="converter_ui.h">
@@ -76,6 +79,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="t_p_10.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="t_10_p.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

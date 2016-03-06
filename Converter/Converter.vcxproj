@@ -171,6 +171,7 @@
     </ClCompile>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="p1_p2.cpp" />
+    <ClCompile Include="t_10_p.cpp" />
     <ClCompile Include="t_p_10.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -216,6 +217,7 @@
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_converter_ui.h" />
     <ClInclude Include="p1_p2.h" />
+    <ClInclude Include="t_10_p.h" />
     <ClInclude Include="t_p_10.h" />
   </ItemGroup>
   <ItemGroup>
