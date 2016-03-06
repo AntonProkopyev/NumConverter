@@ -50,6 +50,12 @@
     <ClCompile Include="GeneratedFiles\qrc_converter_ui.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
+    <ClCompile Include="p1_p2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="t_p_10.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="converter_ui.h">
@@ -65,6 +71,12 @@
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_converter_ui.h">
       <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="p1_p2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="t_p_10.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
