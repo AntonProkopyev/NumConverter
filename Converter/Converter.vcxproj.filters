@@ -59,6 +59,9 @@
     <ClCompile Include="t_10_p.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="editor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="converter_ui.h">
@@ -82,6 +85,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="t_10_p.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Editor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="control.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

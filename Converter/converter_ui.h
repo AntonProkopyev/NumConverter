@@ -2,6 +2,7 @@
 #define CONVERTER_UI_H
 
 #include <QtWidgets/QMainWindow>
+#include "control.h"
 #include "ui_converter_ui.h"
 
 class ConverterUI : public QMainWindow
@@ -13,6 +14,7 @@ public:
     ~ConverterUI();
 
 private:
+    shared_ptr<Control> m_control;
     Ui::ConverterUIClass ui;
 };
 
