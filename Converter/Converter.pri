@@ -9,11 +9,13 @@ message("You are running qmake on a generated .pro file. This may not work!")
 
 HEADERS += ./control.h \
     ./editor.h \
+    ./history.h \
     ./p1_p2.h \
     ./t_10_p.h \
     ./t_p_10.h \
+    ./ui_converter_ui.h \
     ./converter_ui.h \
-    ./ui_converter_ui.h
+    ./history_ui.h
 SOURCES += ./converter_ui.cpp \
     ./editor.cpp \
     ./main.cpp \
