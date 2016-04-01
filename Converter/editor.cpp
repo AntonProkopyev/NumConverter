@@ -37,7 +37,7 @@ string Editor::AddNul()
 string Editor::Backspace()
 {
     m_number.pop_back();
-    if (!m_number.size()) m_number = "0";
+    if (!m_number.size() || m_number.size() == 1 && m_number[0] == '-') m_number = "0";
     return m_number;
 }
 

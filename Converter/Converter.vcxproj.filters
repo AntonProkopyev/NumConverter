@@ -62,6 +62,12 @@
     <ClCompile Include="editor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_history_ui.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_history_ui.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="converter_ui.h">
@@ -69,6 +75,9 @@
     </CustomBuild>
     <CustomBuild Include="converter_ui.qrc">
       <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="history_ui.h">
+      <Filter>Header Files</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
@@ -87,10 +96,10 @@
     <ClInclude Include="control.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_converter_ui.h">
+    <ClInclude Include="ui_converter_ui.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ui_converter_ui.h">
+    <ClInclude Include="history.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

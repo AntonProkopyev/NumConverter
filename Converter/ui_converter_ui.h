@@ -23,8 +23,9 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
-
+#include <QtWidgets/QSizePolicy>
 #include "control.h"
+#include "history_ui.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -53,13 +54,12 @@ public:
     QPushButton *ButtonBS;
     QPushButton *ButtonCL;
     QPushButton *ButtonConvert;
+    QPushButton *ButtonHistory;
     QSlider *horizontalSlider;
     QSlider *horizontalSlider2;
     QLabel *label;
-    QLabel *label_2;    
     QLabel *label_3;
     QLabel *label_4;
-    QLabel *label_5;
     QLabel *label_6;
     QLineEdit *lineEdit;
     QLineEdit *lineEdit2;
@@ -67,82 +67,88 @@ public:
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
+    HistoryUI *historyList;
+
     shared_ptr<Control> m_control;
 
     void setupUi(QMainWindow *ConverterUIClass)
     {
         if (ConverterUIClass->objectName().isEmpty())
             ConverterUIClass->setObjectName(QStringLiteral("ConverterUIClass"));
-        ConverterUIClass->resize(200, 450);
+        historyList = new HistoryUI(0,m_control);
+        ConverterUIClass->setFixedSize(215, 416);
         ConverterUIClass->setAcceptDrops(false);
         centralWidget = new QWidget(ConverterUIClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         ButtonNum0 = new QPushButton(centralWidget);
         ButtonNum0->setObjectName(QStringLiteral("ButtonNum0"));
-        ButtonNum0->setGeometry(QRect(10, 240+120, 25, 25));
+        ButtonNum0->setGeometry(QRect(10, 300, 45, 25));
         ButtonNum1 = new QPushButton(centralWidget);
         ButtonNum1->setObjectName(QStringLiteral("ButtonNum1"));
-        ButtonNum1->setGeometry(QRect(10, 210+120, 25, 25));
+        ButtonNum1->setGeometry(QRect(10, 270, 45, 25));
         ButtonNum2 = new QPushButton(centralWidget);
         ButtonNum2->setObjectName(QStringLiteral("ButtonNum2"));
-        ButtonNum2->setGeometry(QRect(40, 210+120, 25, 25));
+        ButtonNum2->setGeometry(QRect(60, 270, 45, 25));
         ButtonNum3 = new QPushButton(centralWidget);
         ButtonNum3->setObjectName(QStringLiteral("ButtonNum3"));
-        ButtonNum3->setGeometry(QRect(70, 210+120, 25, 25));
+        ButtonNum3->setGeometry(QRect(110, 270, 45, 25));
         ButtonNum4 = new QPushButton(centralWidget);
         ButtonNum4->setObjectName(QStringLiteral("ButtonNum4"));
-        ButtonNum4->setGeometry(QRect(100, 210+120, 25, 25));
+        ButtonNum4->setGeometry(QRect(160, 270, 45, 25));
         ButtonNum5 = new QPushButton(centralWidget);
         ButtonNum5->setObjectName(QStringLiteral("ButtonNum5"));
-        ButtonNum5->setGeometry(QRect(10, 180+120, 25, 25));
+        ButtonNum5->setGeometry(QRect(10, 240, 45, 25));
         ButtonNum6 = new QPushButton(centralWidget);
         ButtonNum6->setObjectName(QStringLiteral("ButtonNum6"));
-        ButtonNum6->setGeometry(QRect(40, 180+120, 25, 25));
+        ButtonNum6->setGeometry(QRect(60, 240, 45, 25));
         ButtonNum7 = new QPushButton(centralWidget);
         ButtonNum7->setObjectName(QStringLiteral("ButtonNum7"));
-        ButtonNum7->setGeometry(QRect(70, 180+120, 25, 25));
+        ButtonNum7->setGeometry(QRect(110, 240, 45, 25));
         ButtonNum8 = new QPushButton(centralWidget);
         ButtonNum8->setObjectName(QStringLiteral("ButtonNum8"));
-        ButtonNum8->setGeometry(QRect(100, 180+120, 25, 25));
+        ButtonNum8->setGeometry(QRect(160, 240, 45, 25));
         ButtonNum9 = new QPushButton(centralWidget);
         ButtonNum9->setObjectName(QStringLiteral("ButtonNum9"));
-        ButtonNum9->setGeometry(QRect(10, 150+120, 25, 25));
+        ButtonNum9->setGeometry(QRect(10, 210, 45, 25));
         ButtonNum10 = new QPushButton(centralWidget);
         ButtonNum10->setObjectName(QStringLiteral("ButtonNum10"));
-        ButtonNum10->setGeometry(QRect(40, 150+120, 25, 25));
+        ButtonNum10->setGeometry(QRect(60, 210, 45, 25));
         ButtonNum11 = new QPushButton(centralWidget);
         ButtonNum11->setObjectName(QStringLiteral("ButtonNum11"));
-        ButtonNum11->setGeometry(QRect(70, 150+120, 25, 25));
+        ButtonNum11->setGeometry(QRect(110, 210, 45, 25));
         ButtonNum12 = new QPushButton(centralWidget);
         ButtonNum12->setObjectName(QStringLiteral("ButtonNum12"));
-        ButtonNum12->setGeometry(QRect(100, 150+120, 25, 25));
+        ButtonNum12->setGeometry(QRect(160, 210, 45, 25));
         ButtonNum13 = new QPushButton(centralWidget);
         ButtonNum13->setObjectName(QStringLiteral("ButtonNum13"));
-        ButtonNum13->setGeometry(QRect(10, 120+120, 25, 25));
+        ButtonNum13->setGeometry(QRect(10, 180, 45, 25));
         ButtonNum14 = new QPushButton(centralWidget);
         ButtonNum14->setObjectName(QStringLiteral("ButtonNum14"));
-        ButtonNum14->setGeometry(QRect(40, 120+120, 25, 25));
+        ButtonNum14->setGeometry(QRect(60, 180, 45, 25));
         ButtonNum15 = new QPushButton(centralWidget);
         ButtonNum15->setObjectName(QStringLiteral("ButtonNum15"));
-        ButtonNum15->setGeometry(QRect(70, 120+120, 25, 25));
+        ButtonNum15->setGeometry(QRect(110, 180, 45, 25));
         ButtonSep = new QPushButton(centralWidget);
         ButtonSep->setObjectName(QStringLiteral("ButtonSep"));
-        ButtonSep->setGeometry(QRect(40, 240+120, 25, 25));
+        ButtonSep->setGeometry(QRect(60, 300, 45, 25));
         ButtonSign = new QPushButton(centralWidget);
         ButtonSign->setObjectName(QStringLiteral("ButtonSign"));
-        ButtonSign->setGeometry(QRect(70, 240+120, 25, 25));
+        ButtonSign->setGeometry(QRect(110, 300, 45, 25));
         ButtonBS = new QPushButton(centralWidget);
         ButtonBS->setObjectName(QStringLiteral("ButtonBS"));
-        ButtonBS->setGeometry(QRect(100, 240+120, 25, 25));
+        ButtonBS->setGeometry(QRect(160, 300, 45, 25));
         ButtonCL = new QPushButton(centralWidget);
         ButtonCL->setObjectName(QStringLiteral("ButtonCL"));
-        ButtonCL->setGeometry(QRect(100, 120+120, 25, 25));
+        ButtonCL->setGeometry(QRect(160, 180, 45, 25));
         ButtonConvert = new QPushButton(centralWidget);
-        ButtonConvert->setObjectName(QStringLiteral("ButtonCL"));
-        ButtonConvert->setGeometry(QRect(10, 390, 115, 25));
+        ButtonConvert->setObjectName(QStringLiteral("ButtonConvert"));
+        ButtonConvert->setGeometry(QRect(10, 330, 195, 25));
+        ButtonHistory = new QPushButton(centralWidget);
+        ButtonHistory->setObjectName(QStringLiteral("ButtonHistory"));
+        ButtonHistory->setGeometry(QRect(10, 360, 195, 25));
         horizontalSlider = new QSlider(centralWidget);
         horizontalSlider->setObjectName(QStringLiteral("horizontalSlider"));
-        horizontalSlider->setGeometry(QRect(10, 80, 91, 22));
+        horizontalSlider->setGeometry(QRect(10, 60, 165, 25));
         horizontalSlider->setAcceptDrops(false);
         horizontalSlider->setMinimum(2);
         horizontalSlider->setMaximum(16);
@@ -152,7 +158,7 @@ public:
         horizontalSlider->setTickInterval(1);
         horizontalSlider2 = new QSlider(centralWidget);
         horizontalSlider2->setObjectName(QStringLiteral("horizontalSlider2"));
-        horizontalSlider2->setGeometry(QRect(10, 200, 91, 22));
+        horizontalSlider2->setGeometry(QRect(10, 145, 165, 25));
         horizontalSlider2->setAcceptDrops(false);
         horizontalSlider2->setMinimum(2);
         horizontalSlider2->setMaximum(16);
@@ -162,30 +168,24 @@ public:
         horizontalSlider2->setTickInterval(1);
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(110, 90, 40, 11));
+        label->setGeometry(QRect(185, 65, 40, 11));
         label_4 = new QLabel(centralWidget);
         label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(110, 210, 40, 11));
-        label_2 = new QLabel(centralWidget);
-        label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(10, 60, 111, 21));
-        label_5 = new QLabel(centralWidget);
-        label_5->setObjectName(QStringLiteral("label_5"));
-        label_5->setGeometry(QRect(10, 180, 111, 21));
+        label_4->setGeometry(QRect(185, 150, 40, 11));
         lineEdit = new QLineEdit(centralWidget);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(10, 10, 113, 20));
+        lineEdit->setGeometry(QRect(10, 25, 195, 25));
         lineEdit->setText("0");
         lineEdit2 = new QLineEdit(centralWidget);
         lineEdit2->setObjectName(QStringLiteral("lineEdit2"));
-        lineEdit2->setGeometry(QRect(10, 130, 113, 20));
-        lineEdit2->setText("0");
+        lineEdit2->setGeometry(QRect(10, 115, 195, 25));
+        lineEdit2->setText("");
         label_3 = new QLabel(centralWidget);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(10, 40, 40, 11));
+        label_3->setGeometry(QRect(10, 10, 40, 11));
         label_6 = new QLabel(centralWidget);
         label_6->setObjectName(QStringLiteral("label_6"));
-        label_6->setGeometry(QRect(10, 160, 40, 11));
+        label_6->setGeometry(QRect(10, 100, 40, 11));
         ConverterUIClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(ConverterUIClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -203,7 +203,7 @@ public:
         QObject::connect(horizontalSlider2, SIGNAL(valueChanged(int)), label_4, SLOT(setNum(int)));
         QObject::connect(horizontalSlider2, &QSlider::valueChanged, [=] (int i)
         {
-            lineEdit2->setText("0");
+            lineEdit2->setText("");
             m_control->SetP2(i);
         });
         QObject::connect(horizontalSlider, &QSlider::valueChanged, [=] (int i)
@@ -261,93 +261,118 @@ public:
         QObject::connect(ButtonNum0, &QPushButton::clicked, [&]
         {
             lineEdit->setText(QString::fromStdString(m_control->SendCommand(0)));
+            lineEdit2->setText("");
         });
         QObject::connect(ButtonNum1, &QPushButton::clicked, [&]
         {
             lineEdit->setText(QString::fromStdString(m_control->SendCommand(1)));
+            lineEdit2->setText("");
         });
         QObject::connect(ButtonNum2, &QPushButton::clicked, [&]
         {
             lineEdit->setText(QString::fromStdString(m_control->SendCommand(2)));
+            lineEdit2->setText("");
         });
         QObject::connect(ButtonNum3, &QPushButton::clicked, [&]
         {
             lineEdit->setText(QString::fromStdString(m_control->SendCommand(3)));
+            lineEdit2->setText("");
         });
         QObject::connect(ButtonNum4, &QPushButton::clicked, [&]
         {
             lineEdit->setText(QString::fromStdString(m_control->SendCommand(4)));
+            lineEdit2->setText("");
         });
         QObject::connect(ButtonNum5, &QPushButton::clicked, [&]
         {
             lineEdit->setText(QString::fromStdString(m_control->SendCommand(5)));
+            lineEdit2->setText("");
         });
         QObject::connect(ButtonNum6, &QPushButton::clicked, [&]
         {
             lineEdit->setText(QString::fromStdString(m_control->SendCommand(6)));
+            lineEdit2->setText("");
         });
         QObject::connect(ButtonNum7, &QPushButton::clicked, [&]
         {
             lineEdit->setText(QString::fromStdString(m_control->SendCommand(7)));
+            lineEdit2->setText("");
         });
         QObject::connect(ButtonNum8, &QPushButton::clicked, [&]
         {
             lineEdit->setText(QString::fromStdString(m_control->SendCommand(8)));
+            lineEdit2->setText("");
         });
         QObject::connect(ButtonNum9, &QPushButton::clicked, [&]
         {
             lineEdit->setText(QString::fromStdString(m_control->SendCommand(9)));
+            lineEdit2->setText("");
         });
         QObject::connect(ButtonNum10, &QPushButton::clicked, [&]
         {
             lineEdit->setText(QString::fromStdString(m_control->SendCommand(10)));
+            lineEdit2->setText("");
         });
         QObject::connect(ButtonNum11, &QPushButton::clicked, [&]
         {
             lineEdit->setText(QString::fromStdString(m_control->SendCommand(11)));
+            lineEdit2->setText("");
         });
         QObject::connect(ButtonNum12, &QPushButton::clicked, [&]
         {
             lineEdit->setText(QString::fromStdString(m_control->SendCommand(12)));
+            lineEdit2->setText("");
         });
         QObject::connect(ButtonNum13, &QPushButton::clicked, [&]
         {
             lineEdit->setText(QString::fromStdString(m_control->SendCommand(13)));
+            lineEdit2->setText("");
         });
         QObject::connect(ButtonNum14, &QPushButton::clicked, [&]
         {
             lineEdit->setText(QString::fromStdString(m_control->SendCommand(14)));
+            lineEdit2->setText("");
         });
         QObject::connect(ButtonNum15, &QPushButton::clicked, [&]
         {
             lineEdit->setText(QString::fromStdString(m_control->SendCommand(15)));
+            lineEdit2->setText("");
         });
         QObject::connect(ButtonSep, &QPushButton::clicked, [&]
         {
             lineEdit->setText(QString::fromStdString(m_control->SendCommand(16)));
+            lineEdit2->setText("");
         });
         QObject::connect(ButtonSign, &QPushButton::clicked, [&]
         {
             lineEdit->setText(QString::fromStdString(m_control->SendCommand(17)));
+            lineEdit2->setText("");
         });
         QObject::connect(ButtonBS, &QPushButton::clicked, [&]
         {
             lineEdit->setText(QString::fromStdString(m_control->SendCommand(18)));
+            lineEdit2->setText("");
         });
         QObject::connect(ButtonCL, &QPushButton::clicked, [&]
         {
             lineEdit->setText(QString::fromStdString(m_control->SendCommand(19)));
+            lineEdit2->setText("");
         });
         QObject::connect(ButtonConvert, &QPushButton::clicked, [&]
         {
             lineEdit2->setText(QString::fromStdString(m_control->SendCommand(21)));
+            historyList->Refresh();
+        });
+        QObject::connect(ButtonHistory, &QPushButton::clicked, [&]
+        {
+            historyList->Show();
         });
         QMetaObject::connectSlotsByName(ConverterUIClass); 
     } // setupUi
 
     void retranslateUi(QMainWindow *ConverterUIClass)
     {
-        ConverterUIClass->setWindowTitle(QApplication::translate("ConverterUIClass", "ConverterUI", 0));
+        ConverterUIClass->setWindowTitle(QApplication::translate("ConverterUIClass", "Converter", 0));
         ButtonNum0->setText(QApplication::translate("ConverterUIClass", "0", 0));
         ButtonNum1->setText(QApplication::translate("ConverterUIClass", "1", 0));
         ButtonNum2->setText(QApplication::translate("ConverterUIClass", "2", 0));
@@ -369,11 +394,10 @@ public:
         ButtonBS->setText(QApplication::translate("ConverterUIClass", "BS", 0));
         ButtonCL->setText(QApplication::translate("ConverterUIClass", "CL", 0));
         ButtonConvert->setText(QApplication::translate("ConverterUIClass", "Convert", 0));
+        ButtonHistory->setText(QApplication::translate("ConverterUIClass", "History", 0));
         label->setText(QApplication::translate("ConverterUIClass", "16", 0));
-        label_2->setText(QApplication::translate("ConverterUIClass", "\320\236\321\201\320\275\320\276\320\262\320\260\320\275\320\270\320\265 \321\201\320\270\321\201\321\202\320\265\320\274\321\213", 0));
         label_3->setText(QApplication::translate("ConverterUIClass", "From", 0));
         label_4->setText(QApplication::translate("ConverterUIClass", "16", 0));
-        label_5->setText(QApplication::translate("ConverterUIClass", "\320\236\321\201\320\275\320\276\320\262\320\260\320\275\320\270\320\265 \321\201\320\270\321\201\321\202\320\265\320\274\321\213", 0));
         label_6->setText(QApplication::translate("ConverterUIClass", "To", 0));
     } // retranslateUi
 

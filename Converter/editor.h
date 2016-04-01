@@ -6,16 +6,17 @@ class Editor
 {
 private:
     string m_number;
+    string AddNum(int d);
+    string AddSep();
+    string addSign();
+    
+    string AddNul();
+    string Backspace();
 public:
     Editor(const string& n) : m_number(n)
     {
     }
-    string AddNum(int d);
-    string AddSep();
-    string addSign();
     string Clear();
-    string AddNul();
-    string Backspace();
     string GetNumber();
     string Edit( int i );
 

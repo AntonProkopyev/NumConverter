@@ -11,7 +11,8 @@ char T10p::PIntToChar(const int d) const
 
 string T10p::Int10ToP(int64_t r) const
 {
-    string result = "";
+    string result = "0";
+    if (r != 0) result = "";
     while (r != 0)
     {
         result = PIntToChar(r % Fp) + result;
@@ -35,7 +36,9 @@ string T10p::Frac10ToP(double f) const
 string T10p::DoTransfer(const double & number) const
 {
     auto sign = number < 0;
-    return (sign ? "-" : "") + Int10ToP(int64_t((sign ? -number : number))) + '.' + Frac10ToP((sign ? -number : number) - int64_t((sign ? -number : number)));
+    auto frac = '.' + Frac10ToP((sign ? -number : number) - int64_t((sign ? -number : number)));
+    while (frac.back() == '0') frac.pop_back();
+    return (sign ? "-" : "") + Int10ToP(int64_t((sign ? -number : number))) + ((frac == ".") ? "": frac);
 }
 
 int T10p::GetP(void) const

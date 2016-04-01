@@ -36,13 +36,21 @@ double Tp10::PFracTo10(const string & f) const
 double Tp10::DoTransfer(const string & str) const
 {
     auto it = find(begin(str), end(str), '.');
-    string intPart(begin(str), it);
+    if (begin(str) == end(str)) return 0;
+    bool isNotPos = false;
+    if (str[0] == '-')isNotPos = true;
+    string intPart(begin(str) + isNotPos, it);
+    double result = 0.;
     if (it != end(str))
     {
         string fracPart(++it, end(str));
-        return PIntTo10(intPart) + PFracTo10(fracPart);
+        result = PIntTo10(intPart) + PFracTo10(fracPart);
     }
-    return PIntTo10(intPart);
+    else result = PIntTo10(intPart);
+
+    if (isNotPos) result *= -1;
+
+    return result;
 }
 
 int Tp10::GetP(void) const

@@ -12,6 +12,12 @@ class ConverterUI : public QMainWindow
 public:
     ConverterUI(QWidget *parent = 0);
     ~ConverterUI();
+protected:
+    void closeEvent(QCloseEvent *event)
+    {
+        delete ui.historyList;
+        event->accept();
+    }
 
 private:
     shared_ptr<Control> m_control;
