@@ -67,17 +67,11 @@
     <CustomBuild Include="converter_ui.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="converter_ui.ui">
-      <Filter>Form Files</Filter>
-    </CustomBuild>
     <CustomBuild Include="converter_ui.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GeneratedFiles\ui_converter_ui.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
     <ClInclude Include="p1_p2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -93,5 +87,15 @@
     <ClInclude Include="control.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_converter_ui.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_converter_ui.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Converter.pro" />
+    <None Include="Converter.pri" />
   </ItemGroup>
 </Project>
