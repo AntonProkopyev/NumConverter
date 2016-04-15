@@ -60,7 +60,7 @@ int Tp10::GetP(void) const
 
 int Tp10::SetP(const int p)
 {
-    if (p > 2 && p < 16)
+    if (p >= 2 && p <= 16)
     {
         Fp = p;
         return 0;

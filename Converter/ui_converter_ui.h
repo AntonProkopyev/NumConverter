@@ -176,10 +176,12 @@ public:
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
         lineEdit->setGeometry(QRect(10, 25, 195, 25));
         lineEdit->setText("0");
+        lineEdit->setAlignment(Qt::AlignRight);
         lineEdit2 = new QLineEdit(centralWidget);
         lineEdit2->setObjectName(QStringLiteral("lineEdit2"));
         lineEdit2->setGeometry(QRect(10, 115, 195, 25));
         lineEdit2->setText("");
+        lineEdit2->setAlignment(Qt::AlignRight);
         label_3 = new QLabel(centralWidget);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setGeometry(QRect(10, 10, 40, 11));
@@ -209,6 +211,7 @@ public:
         QObject::connect(horizontalSlider, &QSlider::valueChanged, [=] (int i)
         {
             lineEdit->setText("0");
+            lineEdit2->setText("");
             m_control->SetP1(i);
             ButtonNum2->setEnabled(true);
             ButtonNum3->setEnabled(true);
@@ -391,7 +394,9 @@ public:
         ButtonNum15->setText(QApplication::translate("ConverterUIClass", "F", 0));
         ButtonSep->setText(QApplication::translate("ConverterUIClass", ".", 0));
         ButtonSign->setText(QApplication::translate("ConverterUIClass", "+/-", 0));
+        ButtonBS->setStyleSheet("QPushButton { color: red }");
         ButtonBS->setText(QApplication::translate("ConverterUIClass", "BS", 0));
+        ButtonCL->setStyleSheet("QPushButton { color: red }");
         ButtonCL->setText(QApplication::translate("ConverterUIClass", "CL", 0));
         ButtonConvert->setText(QApplication::translate("ConverterUIClass", "Convert", 0));
         ButtonHistory->setText(QApplication::translate("ConverterUIClass", "History", 0));
